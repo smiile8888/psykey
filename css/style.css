@@ -22,7 +22,7 @@ body a:hover{
 /*-- banner --*/
 .banner{
 	/*background:url(../images/banner.jpg) no-repeat 0px 0px;*/
-	background:url(../media/header.jpg) no-repeat 0px 0px;
+	background:url(../media/nature-man-header.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -31,7 +31,7 @@ body a:hover{
 	min-height:800px;
 }
 .banner1{
-	background:url(../media/header.jpg) no-repeat 0px 0px;
+	background:url(../media/nature-man-header.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -122,7 +122,7 @@ span.menu{
 
 .banner-info form, .banner-info1 form{
 	padding:1em;
-	background:#699CFC;
+	background:#00699CFC;
 }
 .banner-info input[type="text"], .banner-info1 input[type="text"]{
 	background:#fff;
@@ -183,7 +183,7 @@ span.menu{
 }
 .banner-info-grid-right h4{
 	text-transform:capitalize;
-	color:#F26F62;
+	color:#699CFC;
 	font-size:1.2em;
 	margin:0;
 	font-family: 'Archivo Narrow', sans-serif;
@@ -208,7 +208,7 @@ span.menu{
 	width: 30%;
 }
 .more a:hover{
-	color:#f26f62;
+	color:#699CFC;
 	background: url(../images/2.png) no-repeat 41px 7px;
     display: block;
 }
@@ -221,7 +221,7 @@ span.menu{
 .m1 a:hover{
 	background: url(../images/4.png) no-repeat 84px 6px;
     display: block;
-	color:#f26f62;
+	color:#699CFC;
 }
 /*-- //banner --*/
 /*-- banner-bottom --*/
@@ -246,7 +246,7 @@ span.menu{
 }
 .banner-bottom-left1 h3,.banner-bottom-right1 h3{
 	font-size:2.5em;
-	color:#F26F62;
+	color:#699CFC;
 	font-family: 'Archivo Narrow', sans-serif;
 	text-transform:capitalize;
 	margin:0;
@@ -286,7 +286,7 @@ span.menu{
 }
 .welcome h3,.team h3,.services h3,.news h3,.about h3,.testimonials h3,.contact h3,h3.title,.gallery h3, .result h3{
 	font-size: 2em;
-    color:#F26F62;
+    color:#699CFC;
 	text-align: center;
     font-family: 'Archivo Narrow', sans-serif;
     margin: 0 0 .5em;
@@ -378,7 +378,7 @@ p.et{
 }
 .about-grid img{
 	padding:.5em;
-	border:1px dotted #F26F62;
+	border:1px dotted #699CFC;
 }
 .about-grid p{
 	font-size:14px;
@@ -451,13 +451,13 @@ p.et{
 	text-decoration:none;
 }
 .abt-grid ul li a:hover{
-	color:#F26F62;
+	color:#699CFC;
 }
 .banner-bottom-video-grid-left {
     margin: 2em 0 0;
 }
 .abt-grid1 a{
-	color:#F26F62;
+	color:#699CFC;
 	font-size:.8em;
 	text-decoration:none;
 }
@@ -558,7 +558,7 @@ p.et{
 }
 .testimonials-grid-right1 p span{
 	font-size:2em;
-	color:#F26F62;
+	color:#699CFC;
 }
 /*-- //testimonials --*/
 /*-- footer --*/
@@ -613,7 +613,7 @@ p.et{
 	text-decoration:none;
 }
 .footer-grds p a:hover{
-	color:#F26F62;
+	color:#699CFC;
 }
 .footer-grds-left{
 	float:left;
@@ -716,10 +716,10 @@ p.et{
 	-ms-transition:.5s all;
 }
 .contact-grid-left input[type="submit"]:hover{
-	background:#F26F62;
+	background:#699CFC;
 }
 .contact-grid-right h4{
-	color:#F26F62;
+	color:#699CFC;
 	font-size:1.5em;
 	margin:0 0 1em;
 	font-family: 'Archivo Narrow', sans-serif;
@@ -793,7 +793,7 @@ p.et{
 }
 .grid_5 h3, .grid_5 h2, .grid_5 h1, .grid_5 h4, .grid_5 h5, h3.hdg, h3.bars {
 	margin-bottom: 1em;
-    color: #F26F62;
+    color: #699CFC;
     font-family: 'Archivo Narrow', sans-serif;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -981,7 +981,7 @@ h2.typoh2{
 }
 .gallery-grid1 img{
 	padding:.5em;
-	border:1px dotted #f26f62;
+	border:1px dotted #699CFC;
 }
 .da-thumbs {
 	list-style: none;
@@ -1035,7 +1035,7 @@ h2.typoh2{
 .blog-leftl{
 	float:left;
 	width:18%;
-	background:#f26f62;
+	background:#699CFC;
 	padding:1em;
 	border-top: 4px solid #951509;
 }
@@ -1090,7 +1090,7 @@ h2.typoh2{
 	font-family: 'Archivo Narrow', sans-serif;
 }
 .blog-leftr ul li a:hover{
-	color:#F26F62;
+	color:#699CFC;
 	text-decoration:none;
 }
 .blog-leftr ul li a i {
@@ -1104,7 +1104,7 @@ h2.typoh2{
 	margin:3em 0;
 }
 .blog-right h3, .response h4,.coment-form h4{
-	color: #F26F62;
+	color: #699CFC;
     margin: 0 0 1em;
     font-size: 1.5em;
 	font-family: 'Archivo Narrow', sans-serif;
@@ -1173,7 +1173,7 @@ h2.typoh2{
 	font-size: 14px;
     color: #fff;
     padding: 3px 7px;
-    background: #F26F62;
+    background: #699CFC;
 	}
 .footer-top-grid1 ul.tag2 li a:hover{
 	text-decoration:none;
@@ -1258,7 +1258,7 @@ h2.typoh2{
 	font-size: 18px;
     margin: 0 0 1em 0;
 	font-family: 'Archivo Narrow', sans-serif;
-    color:#F26F62;
+    color:#699CFC;
 }
 .admin-text-left {
 	float: left;
@@ -1309,7 +1309,7 @@ h2.typoh2{
 }
 .response-text-left h5 a {
 	text-decoration: none;
-    color:#F26F62;
+    color:#699CFC;
     font-family: 'Josefin Sans', sans-serif;
 }
 .response-text-left h5 a:hover{
@@ -1333,7 +1333,7 @@ h2.typoh2{
 }
 .response-text-right ul li{
     display: inline-block;
-    color: #F26F62;
+    color: #699CFC;
     font-size: 14px;
     margin-right: 1em;
 	font-family: 'Josefin Sans', sans-serif;
@@ -1344,7 +1344,7 @@ h2.typoh2{
 	font-family: 'Josefin Sans', sans-serif;
 }
 .response-text-right ul li a:hover{
-	color:#F26F62;
+	color:#699CFC;
 	text-decoration:none;
 }
 .media-left a img {
@@ -1387,7 +1387,7 @@ h2.typoh2{
 }
 .coment-form input[type="submit"]:hover{
 	color: #fff;
-	background:#F26F62;
+	background:#699CFC;
 	outline: none;
 }
 .thumbnail {
@@ -1530,7 +1530,7 @@ h2.typoh2{
 		width: 74%;
 	}
 	.banner {
-		background: url(../images/banner.jpg) no-repeat -110px 0px;
+		background: url(../media/nature-man-header.jpg) no-repeat -110px 0px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -1609,7 +1609,7 @@ h2.typoh2{
 		left: -5px;
 	}
 	.banner {
-		background: url(../images/banner.jpg) no-repeat -240px 0px;
+		background: url(../media/nature-man-header.jpg) no-repeat -240px 0px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -1730,7 +1730,7 @@ h2.typoh2{
 		margin: 0.5em 0;
 	}
 	.banner {
-		background: url(../images/banner.jpg) no-repeat -370px 0px;
+		background: url(../media/nature-man-header.jpg) no-repeat -370px 0px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
