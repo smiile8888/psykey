@@ -39,6 +39,7 @@ body a:hover{
 	-ms-background-size:cover;
 	min-height:300px;
 }
+
 .logo{
 	float:left;
 }
@@ -49,24 +50,19 @@ span.menu{
 	display:none;
 }
 .logo a{
-	padding:1em;
+	padding:0.5em;
 	font-size:2em;
 	color:#fff;
-	background:#f26f62;
 	text-decoration:none;
 	font-family: 'Archivo Narrow', sans-serif;
 	display: block;
 }
-.logo a i{
-	font-size:1em;
-	color:#fff;
-	left: -11px;
+
+.logo a img{
+	width = 256px;
+	
 }
-.logo a span{
-	display: block;
-    font-size: 14px;
-    text-align: center;
-}
+
 .top-nav ul{
 	padding:2.5em 0 0;
 }
@@ -92,23 +88,23 @@ span.menu{
 	-ms-transition:.5s all;
 }
 .top-nav ul li a:hover{
-	border: 1px solid #f26f62;
+	border: 1px solid #699CFC;
     border-radius: 20px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	-o-border-radius: 20px;
 	-ms-border-radius: 20px;
-	color: #f26f62;
+	color: #699CFC;
 	background:none;
 }
 .top-nav ul li.active a{
-	border: 1px solid #f26f62;
+	border: 1px solid #699CFC;
     border-radius: 20px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	-o-border-radius: 20px;
 	-ms-border-radius: 20px;
-	color: #f26f62;
+	color: #699CFC;
 }
 
 .banner-info{
@@ -126,7 +122,7 @@ span.menu{
 
 .banner-info form, .banner-info1 form{
 	padding:1em;
-	background:#F26F62;
+	background:#699CFC;
 }
 .banner-info input[type="text"], .banner-info1 input[type="text"]{
 	background:#fff;
@@ -169,7 +165,7 @@ span.menu{
 	color:#78AFF0;
 }
 .banner-info-grid1{
-	background:rgba(46, 44, 44, 0.44);
+	background:rgba(86, 84, 84, 0.54);
 	padding:1em;
 }
 .banner-info-grid-left{
