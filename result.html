@@ -32,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- header -->
         <div class="header">
             <div class="logo">
-                					    <a href="index.html"><img src="media/logo.png" width=256></img></a>
+                <a href="index.html"><img src="media/logo.png" width=256></img></a>
             </div>
             <div class="top-nav">
                 <span class="menu"><img src="images/menu.png" alt="" /></span>
@@ -67,30 +67,85 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="result">
     <div class="container">
         <h3>Results</h3>
-        <div class="result-box">
-            <div class="banner-info-grid-left">
-                <img src="media/male_placeholder.png" width="150">
+        <div class="result-box" onclick="showResultBoxBottom(this)">
+            <div class="result-box-upper">
+                <div class="result-box-left">
+                    <img src="media/male_placeholder.png">
+                </div>
+                <div class="result-box-right">
+                    <div class="col-md-3">
+                        <h4>David Moultan</h4>
+                        <p>Psychotherapist</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Specialities</h4>
+                        <p>Anxiety, Transgender, ...</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Location</h4>
+                        <p>691 Bloor Street West Toronto, ON</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Accepted Insurance</h4>
+                        <p>Manulife, Blus Cross, ...</p>
+                    </div>
+                </div>
             </div>
-            <div class="banner-info-grid-right">
-                <div class="col-md-3">
-                    <h4>David Moultan</h4>
-                    <p class="et">Psychotherapist</p>
+            <div class="result-box-bottom">
+                <div class="result-box-bottom-left">
+                    <h4>Phone</h4>
+                    <p>(111) 111 1111</p>
+                    <h4>Email</h4>
+                    <p>testemail@gmail.com</p>
+                    <h4>Description</h4>
+                    <p></p>
                 </div>
-                <div class="col-md-3">
-                    <h4>Specialities</h4>
-                    <p class="et">Anxiety, Transgender, ...</p>
-                </div>
-                <div class="col-md-3">
-                    <h4>Location</h4>
-                    <p class="et">691 Bloor Street West Toronto, ON</p>
-                </div>
-                <div class="col-md-3">
-                    <h4>Accepted Insurance</h4>
-                    <p class="et">Manulife, Blus Cross, ...</p>
+                <div class="result-box-bottom-right">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47913.08775277497!2d2.11280225!3d41.361743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498e7672e0317%3A0x36127a984f4c05d5!2sL&#39;Hospitalet+de+Llobregat%2C+Barcelona%2C+Spain!5e0!3m2!1sen!2sin!4v1439363529826" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
-            <div class="banner-info-grid-left">
-                <
+        </div>
+
+        <div class="result-box" onclick="showResultBoxBottom(this)">
+            <div class="result-box-upper">
+                <div class="result-box-left">
+                    <img src="media/male_placeholder.png">
+                </div>
+                <div class="result-box-right">
+                    <div class="col-md-3">
+                        <h4>David Moultan</h4>
+                        <p>Psychotherapist</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Specialities</h4>
+                        <p>Anxiety, Transgender, ...</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Location</h4>
+                        <p>691 Bloor Street West Toronto, ON</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Accepted Insurance</h4>
+                        <p>Manulife, Blus Cross, ...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result-box-bottom">
+                <div class="result-box-bottom-left">
+                    <h4>Phone</h4>
+                    <p>(111) 111 1111</p>
+                    <h4>Email</h4>
+                    <p>testemail@gmail.com</p>
+                    <h4>Description</h4>
+                    <p></p>
+                </div>
+                <div class="result-box-bottom-right">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47913.08775277497!2d2.11280225!3d41.361743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498e7672e0317%3A0x36127a984f4c05d5!2sL&#39;Hospitalet+de+Llobregat%2C+Barcelona%2C+Spain!5e0!3m2!1sen!2sin!4v1439363529826" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -170,5 +225,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- for bootstrap working -->
 <script src="js/bootstrap.js"> </script>
 <!-- //for bootstrap working -->
+<!-- Toggle and auto size result box -->
+<script>
+    /**
+     * Show more detail of each result box
+     * @param e {element}      HTML result-box element
+     */
+    function showResultBoxBottom(e) {
+        var bottom = e.getElementsByClassName('result-box-bottom')[0];
+        if (bottom.style.display == "block") {
+            e.style.height = "150px";
+            bottom.style.display = "none";
+        }
+        else {
+            e.style.height = "575px";
+            bottom.style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
