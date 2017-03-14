@@ -303,6 +303,8 @@ span.menu{
 	float:left;
 	width:74%;
 	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .result-box-left h4, .result-box-right h4, .result-box-bottom-left h4{
 	text-transform:capitalize;
@@ -323,7 +325,7 @@ span.menu{
 }
 .result-box-bottom-left{
     float: left;
-    width: 38%;
+    width: 36%;
     margin-left: 3em;
     text-align: left;
 }

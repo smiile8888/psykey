@@ -48,36 +48,44 @@ var view = (function(){
 			if (list[i].gender === "male"){
 				genderIcon = 'media/male_placeholder.png';
 			}
-			f.innerHTML =('<div class="banner-info-grid-left"/>\
+			f.innerHTML =('<div class="result-box-upper">\
+				<div class="result-box-left"/>\
 					<img src="' + genderIcon + '"width="150"/>\
 				</div/>\
-				<div class="banner-info-grid-right"/>\
-					<div class="col-md-3"/>\
+				<div class="result-box-right"/>\
+					<div class="col-xs-3"/>\
 						<h4>' + list[i].name + '</h4/>\
 						<p class="et">Psychotherapist</p/>\
 					</div/>\
-					<div class="col-md-3"/>\
+					<div class="col-xs-3"/>\
 						<h4>Specialities</h4/>\
 						<p class="et">' + list[i].specialties + '</p/>\
 					</div/>\
-					<div class="col-md-3"/>\
+					<div class="col-xs-3"/>\
 						<h4>Location</h4/>\
 						<p class="et">' + list[i].location + '</p/>\
 					</div/>\
-					<div class="col-md-3"/>\
+					<div class="col-xs-3"/>\
 						<h4>Accepted Insurance</h4/>\
 						<p class="et">' + list[i].insurance + '</p/>\
 					</div/>\
 				</div/>\
-				<div display="none" class="result-box-bottom banner-info-grid-left"/>\
-				<div class="banner-info-grid-right"/>\
-					<div class="col-md-3"/>\
-						<h4><br>Contact Info:</h4/>\
-						<p class="et">Telephone: ' + list[i].phone + '</p/>\
-						<p class="et">Email: ' + list[i].email + '</p/>\
-					</div/>\
-				</div/>\
-				</div/>');
+				</div>\
+				<div class="result-box-bottom">\
+                <div class="result-box-bottom-left">\
+                    <h4>Phone</h4>\
+                    <p>(111) 111 1111</p>\
+                    <h4>Email</h4>\
+                    <p>testemail@gmail.com</p>\
+                    <h4>Description</h4>\
+                    <p></p>\
+                </div>\
+                <div class="result-box-bottom-right">\
+                    <div class="map">\
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47913.08775277497!2d2.11280225!3d41.361743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498e7672e0317%3A0x36127a984f4c05d5!2sL&#39;Hospitalet+de+Llobregat%2C+Barcelona%2C+Spain!5e0!3m2!1sen!2sin!4v1439363529826" frameborder="0" style="border:0" allowfullscreen></iframe>\
+                    </div>\
+                </div>\
+            </div>');
 			f.onclick = showResultBoxBottom;
 			document.getElementById("result-list").append(f);
 		}
@@ -92,7 +100,7 @@ var view = (function(){
             bottom.style.display = "none";
         }
         else {
-            e.style.height = "210px";
+            e.style.height = "575px";
             bottom.style.display = "block";
         }
     }
