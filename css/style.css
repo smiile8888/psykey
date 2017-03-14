@@ -30,6 +30,10 @@ body a:hover{
 	-ms-background-size:cover;
 	min-height:800px;
 }
+.test {
+	align-items: end;
+	justify-content: end;
+}
 .banner1{
 	background:url(../media/nature-man-header.jpg) no-repeat 0px 0px;
 	background-size:cover;
@@ -179,7 +183,11 @@ span.menu{
 }
 .banner-info-grid-right{
 	float:right;
-	width:68%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	width:70%;
 }
 .banner-info-grid-right h4{
 	text-transform:capitalize;
