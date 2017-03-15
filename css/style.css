@@ -127,6 +127,7 @@ span.menu{
 .banner-info form, .banner-info1 form{
 	padding:1em;
 	background:#00699CFC;
+	text-align: center;
 }
 .banner-info input[type="text"], .banner-info1 input[type="text"]{
 	background:#fff;
@@ -290,6 +291,7 @@ span.menu{
 }
 .result-box-upper{
     display: inline-block;
+	width: 100%;
 }
 .result-box-left{
     margin-left: 2.5em;
@@ -303,8 +305,6 @@ span.menu{
 	float:left;
 	width:74%;
 	text-align: center;
-	overflow: hidden;
-	white-space: nowrap;
 }
 .result-box-left h4, .result-box-right h4, .result-box-bottom-left h4{
 	text-transform:capitalize;
@@ -338,12 +338,27 @@ span.menu{
     margin-right: 3em;
 }
 
+.developer{
+	margin: 3em 0;
+	text-align: center;
+}
+.developer img{
+	height: 500px;
+	width: 90%;
+	box-shadow: 3px 3px 1px #888888;
+}
+.developer p{
+	font-size: 16px;
+	color: #999;
+	margin:1em auto 0;
+	line-height: 2em;
+}
 /*-- //banner-bottom --*/
 /*-- welcome --*/
-.welcome,.news,.about,.contact,.typo,.gallery,.news,.single,.result{
+.welcome,.news,.about,.contact,.typo,.gallery,.news,.single,.result, .about-us{
 	padding:5em 0;
 }
-.welcome h3,.team h3,.services h3,.news h3,.about h3,.testimonials h3,.contact h3,h3.title,.gallery h3, .result h3{
+.welcome h3,.team h3,.services h3,.news h3,.about h3,.testimonials h3,.contact h3,h3.title,.gallery h3, .result h3, .about-us h3{
 	font-size: 2em;
     color:#699CFC;
 	text-align: center;
@@ -737,7 +752,7 @@ p.et{
     padding: 13px 10px;
     color: #B2B2B2;
 	outline:none;
-	width:80%;
+	width:90%;
 	background:none;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -751,11 +766,11 @@ p.et{
 .contact-grid-left textarea{
 	resize:none;
 	min-height:300px;
-	width:100% !important;
+	width:90% !important;
 	margin:1em 0;
 }
 .contact-grid-left input[type="submit"]{
-	width:100%;
+	width:90%;
 	padding:13px 0;
 	background: #78AFF0;
     font-family: 'Archivo Narrow', sans-serif;
@@ -788,7 +803,7 @@ p.et{
 	font-size:14px;
 	margin:0;
 	line-height:1.8em;
-	width:49%;
+	width:100%;
 }
 .contact-grid-right ul{
 	padding:1em 0 0;
