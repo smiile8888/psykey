@@ -10,7 +10,7 @@ var data = [{name: "Alan Burke", image: 'media/burke.jpg', map: '<iframe src="ht
 {name: "Chris Hartley", image: 'media/hartley.jpg', phone:"555-555-5555", email:"test@gmail.com", gender: "male", role: "Psychotherapist", specialties: "Self Esteem<br>Anxiety<br>Anger Management", location: "100 Consilium Pl<br>Scarborough, ON", insurance: "Sun Life<br>ChoiceCare<br>Manulife", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.799024360572!2d-79.25447858527332!3d43.77703055243376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d1a9a117c92b%3A0xcd98eae48613def2!2s100+Consilium+Pl%2C+Scarborough%2C+ON+M1H+3E3!5e0!3m2!1sen!2sca!4v1489537761853" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'},
 {name: "Pamella Seaton", image: 'media/seaton.jpg', phone:"555-555-5555", email:"test@gmail.com", gender: "female", role: "Therapist", specialties: "Relationships<br>Behavioural<br>Depression", location: "10 Milner Crt<br>Scarborough, ON", insurance: "Sun Life<br>ChoiceCare<br>Manulife", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.232991823601!2d-79.23790093449784!3d43.78877817911691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e5a052cec5%3A0x6e6b89b9a85b1b77!2sRegus+-+Ontario%2C+Scarborough+-+10+Milner+Business+Court!5e0!3m2!1sen!2sca!4v1489539426735" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'},
 {name: "Ruth Potter", phone:"555-555-5555", email:"test@gmail.com", gender: "female", role: "Counsellor", specialties: "Children<br>Anxiety<br>Depression", location: "385 Silver Star Blvd<br>Scarborough, ON", insurance: "None", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.960569801308!2d-79.297416684497!3d43.81517727911601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3fc0dbdcbc9%3A0x493e14a287eff0e8!2s385+Silver+Star+Blvd%2C+Scarborough%2C+ON+M1V+0E3!5e0!3m2!1sen!2sca!4v1489539692447" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'},
-{name: "Brian Brumwell", phone:"555-555-5555", email:"test@gmail.com", gender: "male", role: "Therapist", specialties: "Marital<br>Children<br>Brain Trauma", location: "10 Milner Crt<br>Scarborough, ON", insurance: "None", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.232991823601!2d-79.23790093449784!3d43.78877817911691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e5a052cec5%3A0x6e6b89b9a85b1b77!2sRegus+-+Ontario%2C+Scarborough+-+10+Milner+Business+Court!5e0!3m2!1sen!2sca!4v1489539426735" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'}]
+{name: "Brian Brumwell", phone:"555-555-5555", email:"test@gmail.com", gender: "male", role: "Therapist", specialties: "Marital<br>Children<br>Brain Trauma", location: "10 Milner Crt<br>Scarborough, ON", insurance: "None", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.232991823601!2d-79.23790093449784!3d43.78877817911691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e5a052cec5%3A0x6e6b89b9a85b1b77!2sRegus+-+Ontario%2C+Scarborough+-+10+Milner+Business+Court!5e0!3m2!1sen!2sca!4v1489539426735" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'}];
 
 
 var view = (function(){
@@ -19,8 +19,6 @@ var view = (function(){
 		var query = window.location.search.split('=')[1];
 		var qs = query.split('+');
 		for (var pos = 0; pos < data.length; pos++){
-			var entry = data[pos];
-			
 			// Keep track of # of hits
 			var count = 0;
 			for (var i = 0; i < qs.length; i++) {
@@ -42,64 +40,68 @@ var view = (function(){
 			}
         }
 		displayResults(toList);
-	}
+	};
 	
 	var displayResults = function(list){
 		for (var i = 0; i < list.length; i++){
-			var f = document.getElementById("result-list");
-			f = document.createElement('div');
+			var f = document.createElement('div');
 			f.className = "result-box";
-			var genderIcon = 'media/female_placeholder.png';
-			if (list[i].gender === "male"){
-				genderIcon = 'media/male_placeholder.png';
-			}
-			var icon = genderIcon;
-			if (list[i].image != null) {
+
+			var icon;
+			if (list[i].image) {
 				icon = list[i].image;
 			}
+			else if (list[i].gender === "male") {
+				icon = 'media/male_placeholder.png';
+			}
+			else {
+				icon = 'media/female_placeholder.png';
+			}
+
 			f.innerHTML =('<div class="result-box-upper">\
-				<div class="result-box-left"/>\
-					<img src="' + icon + '"width="150px" height="120px"/>\
-				</div/>\
-				<div class="result-box-right"/>\
-					<div class="col-xs-3"/>\
-						<h4>' + list[i].name + '</h4/>\
-						<p class="et">' + list[i].role + '</p/>\
-					</div/>\
-					<div class="col-xs-3"/>\
-						<h4>Specialities</h4/>\
-						<p class="et">' + list[i].specialties + '</p/>\
-					</div/>\
-					<div class="col-xs-3"/>\
-						<h4>Location</h4/>\
-						<p class="et">' + list[i].location + '</p/>\
-					</div/>\
-					<div class="col-xs-3"/>\
-						<h4>Accepted Insurance</h4/>\
-						<p class="et">' + list[i].insurance + '</p/>\
-					</div/>\
-				</div/>\
+					<div class="result-box-left">\
+						<img src="' + icon + '" width="150px" height="120px"/>\
+					</div>\
+					<div class="result-box-right">\
+						<div class="col-xs-3">\
+							<h4>' + list[i].name + '</h4>\
+							<p>' + list[i].role + '</p>\
+						</div>\
+						<div class="col-xs-3">\
+							<h4>Specialities</h4>\
+							<p>' + list[i].specialties + '</p>\
+						</div>\
+						<div class="col-xs-3">\
+							<h4>Location</h4>\
+							<p>' + list[i].location + '</p>\
+						</div>\
+						<div class="col-xs-3">\
+							<h4>Accepted Insurance</h4>\
+							<p>' + list[i].insurance + '</p>\
+						</div>\
+					</div>\
 				</div>\
 				<div class="result-box-bottom">\
-                <div class="result-box-bottom-left">\
-                    <h4>Phone</h4>\
-                    <p>(111) 111 1111</p>\
-                    <h4>Email</h4>\
-                    <p>testemail@gmail.com</p>\
-                    <h4>Description</h4>\
-					<p>If you choose to work with me I will strive to create a safe, respectful and meaningful relationship with you. I will listen carefully, with empathy and without judgement. Feelings such as anxiety, anger, depression and isolation often subside as well.</p>\
-                    <p></p>\
-                </div>\
-                <div class="result-box-bottom-right">\
-                    <div class="map">' + list[i].map + '</div>\
-                </div>\
-            </div>');
+					<div class="result-box-bottom-left">\
+						<h4>Phone</h4>\
+						<p>' + list[i].phone +'</p>\
+						<h4>Email</h4>\
+						<p>' + list[i].email + '</p>\
+						<h4>Description</h4>\
+						<p>If you choose to work with me I will strive to create a safe, respectful and meaningful relationship with you. I will listen carefully, with empathy and without judgement. Feelings such as anxiety, anger, depression and isolation often subside as well.</p>\
+					</div>\
+					<div class="result-box-bottom-right">\
+						<div class="map">' + list[i].map + '</div>\
+					</div>\
+				</div>');
 			f.onclick = showResultBoxBottom;
 			document.getElementById("result-list").append(f);
 		}
-	}
-	
-	
+	};
+
+    /**
+     * Show more detail of each result box
+     */
     var showResultBoxBottom = function() {
 		var e = this;
         var bottom = e.getElementsByClassName('result-box-bottom')[0];
@@ -111,7 +113,7 @@ var view = (function(){
             e.style.height = "575px";
             bottom.style.display = "block";
         }
-    }
+    };
 	
 	return view;
 	
