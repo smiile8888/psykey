@@ -12,6 +12,18 @@ var data = [{name: "Alan Burke", image: 'media/burke.jpg', map: '<iframe src="ht
 {name: "Ruth Potter", phone:"555-555-5555", email:"test@gmail.com", gender: "female", role: "Counsellor", specialties: "Children<br>Anxiety<br>Depression", location: "385 Silver Star Blvd<br>Scarborough, ON", insurance: "None", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.960569801308!2d-79.297416684497!3d43.81517727911601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3fc0dbdcbc9%3A0x493e14a287eff0e8!2s385+Silver+Star+Blvd%2C+Scarborough%2C+ON+M1V+0E3!5e0!3m2!1sen!2sca!4v1489539692447" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'},
 {name: "Brian Brumwell", phone:"555-555-5555", email:"test@gmail.com", gender: "male", role: "Therapist", specialties: "Marital<br>Children<br>Brain Trauma", location: "10 Milner Crt<br>Scarborough, ON", insurance: "None", map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.232991823601!2d-79.23790093449784!3d43.78877817911691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e5a052cec5%3A0x6e6b89b9a85b1b77!2sRegus+-+Ontario%2C+Scarborough+-+10+Milner+Business+Court!5e0!3m2!1sen!2sca!4v1489539426735" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>'}];
 
+var roles_related = {
+	'Psychotherapist':['stress', 'obsessive', 'ocd', 'bipolar', 'bpd', 'personality', 'depression', 'anxiety', 'schizoid', 'eating', 'posttraumatic', 'traumatic', 'sleep', 'psychotic', 'identity', 'psychosis', 'insomnia', 'attention', 'adhd', 'hyperactive', 'bulimia', 'phobia', 'gender', 'sex', 'sexual', 'gay', 'bi', 'bisexual', 'queer', 'trans', 'paranoid', 'paranoia'],
+	'Psychologist':['schizo', 'bipolar', 'bpd', 'personality', 'suicide', 'suicidal', 'social', 'antisocial', 'multiple', 'anxiety', 'schizoid', 'eating', 'traumatic', 'sleep', 'psychotic', 'psychosis', 'panic', 'breakdown', 'insomnia', 'attention', 'deficit', 'adhd', 'hyperactive', 'bulimia', 'alzheimer', 'phobia', 'gender', 'sex', 'hallucinations', 'hallucinate', 'paranoid', 'paranoia'],
+	'Counsellor':['addiction', 'obsessive', 'ocd', 'depression', 'suicide', 'suicidal', 'multiple', 'anxiety', 'schizoid', 'eating', 'posttraumatic', 'traumatic', 'sleep', 'psychotic', 'identity', 'psychosis', 'panic', 'breakdown', 'insomnia', 'attention', 'deficit', 'adhd', 'hyperactive', 'bulimia', 'phobia', 'gender', 'sex', 'sexual', 'gay', 'bi', 'bisexual', 'queer', 'trans', 'hallucinations', 'hallucinate', 'paranoid', 'paranoia', 'confidence', 'body', 'image'],
+	'Social Worker': ['work', 'job', 'stress', 'social', 'addiction', 'autism', 'anxiety', 'trauma', 'sleep', 'psychotic', 'panic', 'breakdown', 'insomnia', 'drink', 'alchohol', 'drug']
+}
+
+var specialty_related = {
+	'Eating Disorder':['bulemia', 'anorexia', 'pica'],
+	'Sleep Disorder':['insomnia', 'hypersomnia', 'narcolepsy', 'sleepwalking']
+}
+
 
 var view = (function(){
 	window.onload = function(){
@@ -39,6 +51,24 @@ var view = (function(){
 				}
 			}
         }
+		// Create a second part to this list, using the related sets above
+		for (var pos = 0; pos < data.length; pos++){
+			var count = 0;
+			for (var i = 0; i < qs.length; i++) {
+				var word = qs[i].toLowerCase();
+				var entry = data[pos];
+				// Todo: if entry.role in roles_related -> check word in related
+				if (!toList.includes(entry)){
+					if (entry.role in roles_related){
+						if ($.inArray(word, roles_related[entry.role]) > -1){
+							console.log(roles_related[entry.role]);
+							toList.push(entry);
+						}
+					}
+				} 
+			}
+		}
+		
 		displayResults(toList);
 	};
 	
