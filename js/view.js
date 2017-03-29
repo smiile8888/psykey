@@ -55,6 +55,7 @@ var specialty_related = {
 var view = (function(){
 	window.onload = function(){
 		var toList = [];
+		var termsHit = [];
 		var query = window.location.search.split('=')[1];
 		var qs = query.split('+');
 		for (var pos = 0; pos < data.length; pos++){
@@ -75,6 +76,7 @@ var view = (function(){
 				// Only push the result if it makes a hit on every query word
 				if (count == qs.length) {
 					toList.push(entry);
+					termsHit.push(word);
 				}
 			}
         }
@@ -88,18 +90,26 @@ var view = (function(){
 				if (!toList.includes(entry)){
 					if (entry.role in roles_related){
 						if ($.inArray(word, roles_related[entry.role]) > -1){
-							console.log(roles_related[entry.role]);
 							toList.push(entry);
+							termsHit.push(word);
 						}
 					}
-				} 
+				} else{
+					var sr = entry.specialties.split('<br>');
+					for (var j = 0; j < sr.length; j++){
+						if (sr[j] in specialty_related){
+							if ($.inArray(word, specialty_related[sr[j]]) > -1){
+								toList.push(entry);
+							}
+						}
+					}
+				}
 			}
 		}
-		
-		displayResults(toList);
+		displayResults(toList, termsHit);
 	};
 	
-	var displayResults = function(list){
+	var displayResults = function(list, terms){
 		for (var i = 0; i < list.length; i++){
 			var f = document.createElement('div');
 			f.className = "result-box";
@@ -140,12 +150,12 @@ var view = (function(){
 				</div>\
 				<div class="result-box-bottom">\
 					<div class="result-box-bottom-left">\
+						<h4>Description</h4>\
+						<p>' + list[i].description + '</p>\
 						<h4>Phone</h4>\
 						<p>' + list[i].phone +'</p>\
 						<h4>Email</h4>\
 						<p>' + list[i].email + '</p>\
-						<h4>Description</h4>\
-						<p>' + list[i].description + '</p>\
 					</div>\
 					<div class="result-box-bottom-right">\
 						<div class="map">' + list[i].map + '</div>\
